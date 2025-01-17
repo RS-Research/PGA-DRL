@@ -1,0 +1,2 @@
+BOT_TOKEN=Your-Telegram-Bot-Token
+CHAT_ID=The Telegram Chanel chat id that the Bot is the admin Member of it
