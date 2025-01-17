@@ -96,7 +96,7 @@ This research was conducted by:
 - Pegah Malekpour Alamdari
 - Mehdi Hosseinzadeh
 
-For inquiries, please contact: [gholamrezazare@ghrzarea@gmail.com](mailto:gholamrezazare@gmail.com)
+For inquiries, please contact: [ghrzarea@gmail.com](mailto:ghrzarea@gmail.com)
 
 ---
 Thank you for your interest in PGA-DRL! If you use this code in your research, please cite our paper.
