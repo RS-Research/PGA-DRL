@@ -1,0 +1,46 @@
+model: PGA_DRL
+
+
+embedding_size: 128
+n_hops: 8
+node_dropout: 0.3
+message_dropout: 0.3
+dropout: 0.3
+edge_dropout_rate: 0.3
+
+reg_weight: 1e-5
+n_layers: 8
+
+train_batch_size: 8192
+eval_batch_size: 8192
+gamma: 0.99  # Discount factor for reward
+num_heads: 8
+temperature: 0.2
+
+# Hyperparameters for training
+learning_rate: 0.001
+actor_lr: 0.001
+critic_lr: 0.001
+epochs: 100
+
+batch_size: 8192
+optimizer: Adam
+loss_type: BPR  # Use BPR loss for pairwise learning
+
+# Evaluation metrics
+metrics: ["Recall", "MRR", "NDCG", "Hit", "Precision"]
+topk: [5,10,15,20,25,50,100]
+
+
+stopping_step: 10            # Stop training if validation score doesn't improve for 10 epochs
+eval_step: 1                 # Evaluate after every epoch
+
+# Data format and negative sampling
+dl_format: 'pairwise'  # Pointwise or pairwise, but BPR uses pairwise
+train_neg_sample_args:  # Negative sampling settings for training
+  neg_sampling_by: 'pool'  # Sample from all items, excluding those already interacted with
+  sample_num: 10  # One negative sample per positive interaction
+
+eval_neg_sample_args:  # Negative sampling for evaluation
+  neg_sampling_by: 'pool'  # Use the full item space for evaluation
+  sample_num: 10 
